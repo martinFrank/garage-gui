@@ -1,0 +1,5 @@
+sudo docker build --file ./DOCKERFILE -t garage-gui .
+
+docker run -it --rm -p 9000:80 garage-gui
+
+//see https://betterprogramming.pub/how-to-create-an-angular-dockerfile-75c059e7f8e8
