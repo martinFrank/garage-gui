@@ -6,8 +6,18 @@ COPY . .
 RUN npm ci && npm run build
 
 
-# stage 2
+# # stage 2
 
-FROM nginx:alpine
-COPY --from=my-app-build /app/dist/garage-gui /usr/share/nginx/html
+# FROM nginx:alpine
+# COPY --from=my-app-build /app/dist/garage-gui /usr/share/nginx/html
+# EXPOSE 80
+
+
+# alternative step 2
+
+# add app
+COPY . /app
+
+# start app
+CMD ng serve --host 0.0.0.0 --port 80
 EXPOSE 80
